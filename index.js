@@ -1,7 +1,7 @@
 class TokiNovel extends Plugin {
     id = 'tokinovel';
     name = '토키노벨';
-    icon = 'https://raw.githubusercontent.com/zasuck/tryntk/refs/heads/master/icon.png';
+    icon = 'https://raw.githubusercontent.com/zasuck/lnntk/refs/heads/master/icon.png';
     site = 'https://toki31.com/novel';
     version = '1.0.0';
 
@@ -86,7 +86,7 @@ class TokiNovel extends Plugin {
         loadedCheerio('.list-item').forEach((i, el) => {
             const novelName = loadedCheerio(el).find('.subject a').text().trim();
             const novelCover = loadedCheerio(el).find('img').attr('src');
-            const novelUrl = loadedCheerio(el).find('.subject a').attr('href');
+            const novelUrl = loadedCheerio(el).find('a').attr('href');
 
             if (novelName) {
                 novels.push({
