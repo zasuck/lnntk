@@ -1,18 +1,33 @@
-name: Copy Static Files
+name: Publish Plugins
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, master, "plugins/**" ]
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Create dist folder and copy files
-        run: |
-          mkdir -p .dist
-          cp -r plugins .dist/
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build plugins
+        run: npx @lnreader/cli@latest build
+
+      - name: Deploy to plugins branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: plugins
+          publish_dir: .dist
+          force_orphan: true
