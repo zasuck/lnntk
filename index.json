@@ -6,6 +6,9 @@
     "version": "1.0.0",
     "icon": "https://raw.githubusercontent.com/github/explore/main/topics/javascript/javascript.png",
     "lang": "ko",
-    "url": "https://raw.githubusercontent.com/zasuck/lnntk/refs/heads/main/sbxh9.js"
+    "url": "https://raw.githubusercontent.com/zasuck/lnntk/main/sbxh9.js",
+    "extra": {
+      "author": "zasuck"
+    }
   }
 ]
