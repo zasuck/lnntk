@@ -1,7 +1,7 @@
 class TokiNovel extends Plugin {
     id = 'tokinovel';
     name = '토키노벨';
-    icon = 'https://raw.githubusercontent.com/zasuck/lnntk/refs/heads/master/icon.png';
+    icon = 'https://raw.githubusercontent.com/zasuck/lnntk/refs/heads/main/icon.png';
     site = 'https://toki31.com/novel';
     version = '1.0.0';
 
