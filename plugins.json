@@ -1,11 +1,11 @@
-{
-  "sbxh9": {
+[
+  {
     "id": "sbxh9",
     "name": "SBXH Novel",
     "site": "https://sbxh9.com",
-    "version": "1.0.0",
-    "icon": "https://raw.githubusercontent.com/github/explore/main/topics/javascript/javascript.png",
     "lang": "ko",
-    "url": "https://raw.githubusercontent.com/zasuck/lnntk/main/sbxh9.js"
+    "version": "1.0.0",
+    "url": "https://raw.githubusercontent.com/zasuck/lnntk/main/sbxh9.js",
+    "iconUrl": "https://raw.githubusercontent.com/github/explore/main/topics/javascript/javascript.png"
   }
-}
+]
