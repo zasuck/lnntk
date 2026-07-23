@@ -34,7 +34,7 @@ class SBXHPlugin {
   }
 
   async parseChapter(chapterPath) {
-    return "LNReader 플러그인 연결 성공!";
+    return "LNReader v2.0.2 플러그인 연결 성공!";
   }
 
   async searchNovels(searchTerm, page) {
@@ -42,4 +42,4 @@ class SBXHPlugin {
   }
 }
 
-export default new SBXHPlugin();
+module.exports = new SBXHPlugin();
