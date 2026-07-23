@@ -14,6 +14,5 @@ jobs:
 
       - name: Create dist folder and copy files
         run: |
-          mkdir -p .dist/plugins/tokinovel
-          cp plugins/tokinovel/index.js .dist/plugins/tokinovel/index.js
-          echo '[{"id": "tokinovel", "name": "Toki Novel", "version": "1.0.0", "icon": "https://raw.githubusercontent.com/github/explore/main/topics/javascript/javascript.png", "site": "https://toki31.com", "lang": "all", "path": "tokinovel", "file": "plugins/tokinovel/index.js"}]' > .dist/plugins.min.json
+          mkdir -p .dist
+          cp -r plugins .dist/
