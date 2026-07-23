@@ -1,11 +1,9 @@
-class TokiPlugin {
-  constructor() {
-    this.id = "tokinovel";
-    this.name = "Toki Novel";
-    this.icon = "https://raw.githubusercontent.com/github/explore/main/topics/javascript/javascript.png";
-    this.site = "https://toki31.com";
-    this.version = "1.0.0";
-  }
+const TokiPlugin = {
+  id: "tokinovel",
+  name: "Toki Novel",
+  icon: "https://raw.githubusercontent.com/github/explore/main/topics/javascript/javascript.png",
+  site: "https://toki31.com",
+  version: "1.0.0",
 
   async popularNovels(page) {
     return [
@@ -15,7 +13,7 @@ class TokiPlugin {
         path: "/test"
       }
     ];
-  }
+  },
 
   async parseNovelAndChapters(novelPath) {
     return {
@@ -31,15 +29,15 @@ class TokiPlugin {
         }
       ]
     };
-  }
+  },
 
   async parseChapter(chapterPath) {
     return "연결 성공!";
-  }
+  },
 
   async searchNovels(searchTerm, page) {
     return [];
   }
-}
+};
 
-module.exports = new TokiPlugin();
+module.exports = TokiPlugin;
