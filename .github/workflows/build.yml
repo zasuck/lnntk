@@ -17,9 +17,3 @@ jobs:
           mkdir -p .dist
           cp -r plugins .dist/
           echo '[{"id": "tokinovel", "name": "Toki Novel", "version": "1.0.0", "icon": "https://raw.githubusercontent.com/github/explore/main/topics/javascript/javascript.png", "site": "https://toki31.com", "lang": "all", "path": "tokinovel"}]' > .dist/plugins.min.json
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: dist
-          path: .dist/
