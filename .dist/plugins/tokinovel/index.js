@@ -2,14 +2,14 @@ class TokiNovel extends Plugin {
   id = 'tokinovel';
   name = 'Toki Novel';
   icon = 'https://raw.githubusercontent.com/github/explore/main/topics/javascript/javascript.png';
-  site = 'https://toki31.com';
+  site = 'https://toki31.com/novel';
   version = '1.0.0';
 
   async popularNovels(page) {
     return {
       novels: [
         {
-          name: '테스트 소설',
+          name: '토키노벨 연동 테스트',
           cover: 'https://via.placeholder.com/150',
           path: '/test'
         }
@@ -20,10 +20,10 @@ class TokiNovel extends Plugin {
 
   async parseNovelAndChapters(novelPath) {
     return {
-      name: '테스트 소설',
+      name: '토키노벨 연동 테스트',
       cover: 'https://via.placeholder.com/150',
-      author: '작가',
-      summary: '연결 테스트 소설입니다.',
+      author: '토키',
+      summary: 'toki31.com/novel 연동 테스트 중입니다.',
       chapters: [
         {
           name: '1화',
@@ -35,7 +35,7 @@ class TokiNovel extends Plugin {
   }
 
   async parseChapter(chapterPath) {
-    return '<p>연결 성공!</p>';
+    return '<p>연동 성공!</p>';
   }
 
   async searchNovels(searchTerm, page) {
