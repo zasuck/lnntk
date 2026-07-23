@@ -17,8 +17,5 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build plugin
-        run: npx @lnreader/cli@latest build
+      - name: Compile and Build
+        run: npx @lnreader/cli@latest build --outDir .dist
