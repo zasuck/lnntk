@@ -1,42 +1,50 @@
-// LNReader SBXH Novel Plugin
-export const id = "sbxh9";
-export const name = "SBXH Novel";
-export const site = "https://sbxh9.com";
-export const version = "1.0.0";
-export const icon = "https://raw.githubusercontent.com/github/explore/main/topics/javascript/javascript.png";
+class SBXHPlugin {
+  constructor() {
+    this.id = "sbxh9";
+    this.name = "SBXH Novel";
+    this.icon = "https://raw.githubusercontent.com/github/explore/main/topics/javascript/javascript.png";
+    this.site = "https://sbxh9.com";
+    this.version = "1.0.0";
+  }
 
-// 1. 소설 목록 불러오기
-export const popularNovels = async (page) => {
-    const url = `${site}/novel?page=${page}`;
-    const response = await fetch(url);
-    const body = await response.text();
-    
-    // HTML 파싱 및 목록 생성
-    const novels = [];
-    // 앱 내부에서 사이트 링크를 탐색해 소설을 불러오는 기본 로직
-    return novels;
-};
+  // 1. 인기/최신 소설 목록 가져오기 (테스트용)
+  async popularNovels(page) {
+    return [
+      {
+        name: "테스트 소설 1",
+        cover: "https://via.placeholder.com/150",
+        path: "/test-novel-1"
+      }
+    ];
+  }
 
-// 2. 소설 상세 정보 및 회차 목록
-export const parseNovelAndChapters = async (novelPath) => {
-    const url = `${site}${novelPath}`;
-    const response = await fetch(url);
-    const body = await response.text();
-
+  // 2. 소설 상세 정보 & 회차 목록 가져오기
+  async parseNovelAndChapters(novelPath) {
     return {
-        path: novelPath,
-        name: "소설 제목",
-        cover: "",
-        summary: "",
-        chapters: []
+      name: "테스트 소설 1",
+      cover: "https://via.placeholder.com/150",
+      author: "작자미상",
+      summary: "플러그인 연결 테스트용 소설입니다.",
+      chapters: [
+        {
+          name: "1화 - 테스트",
+          path: "/test-chapter-1",
+          releaseTime: "2026-07-24"
+        }
+      ]
     };
-};
+  }
 
-// 3. 회차 본문 불러오기
-export const parseChapter = async (chapterPath) => {
-    const url = `${site}${chapterPath}`;
-    const response = await fetch(url);
-    const body = await response.text();
+  // 3. 본문 내용 가져오기
+  async parseChapter(chapterPath) {
+    return "LNReader v2 플러그인 연결에 성공했습니다! 정상 작동합니다.";
+  }
 
-    return "본문 내용입니다.";
-};
+  // 4. 검색 기능
+  async searchNovels(searchTerm, page) {
+    return [];
+  }
+}
+
+// LNReader v2 등록 방식
+module.exports = new SBXHPlugin();
