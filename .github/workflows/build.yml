@@ -1,4 +1,4 @@
-name: Copy Static Files
+name: Build and Push Dist
 
 on:
   push:
@@ -15,5 +15,13 @@ jobs:
       - name: Create dist folder and copy files
         run: |
           mkdir -p .dist/plugins/tokinovel
-          cp -r plugins/tokinovel/index.js .dist/plugins/tokinovel/index.js
+          cp plugins/tokinovel/index.js .dist/plugins/tokinovel/index.js
           cp plugins.min.json .dist/plugins.min.json
+
+      - name: Commit and push .dist
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add -f .dist
+          git commit -m "Auto-build dist folder" || echo "No changes to commit"
+          git push
