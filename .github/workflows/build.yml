@@ -1,4 +1,4 @@
-name: Build and Test
+name: Copy Static Files
 
 on:
   push:
@@ -8,18 +8,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run build
-        run: npx @lnreader/cli@latest build
+      - name: Create dist folder and copy files
+        run: |
+          mkdir -p .dist/plugins/tokinovel
+          cp plugins/tokinovel/index.js .dist/plugins/tokinovel/index.js
+          cp plugins.min.json .dist/plugins.min.json
