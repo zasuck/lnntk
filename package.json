@@ -1,0 +1,8 @@
+{
+  "name": "lnntk-plugins",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "@lnreader/cli": "^0.3.0"
+  }
+}
